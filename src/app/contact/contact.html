@@ -1,0 +1,44 @@
+<section id="contact" class="contact section" data-aos="fade-in">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>I am open to collaborations and opportunities, connect with me on :</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-6">
+
+        <div class="info">
+          <p><strong>Email:</strong><a href="mailto:believecassian@gmail.com"> believecassian@gmail.com</a></p>         
+          <p><strong>Phone:</strong> <span></span><a href="tel:+263777098241">+263 777 098 241</a></p>
+          <p><strong>Location:</strong> Harare, Zimbabwe</p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+  <input name="name" ngModel required class="form-control" placeholder="Your Name">
+
+  <input name="email" ngModel required type="email" class="form-control" placeholder="Your Email">
+
+  <textarea name="message" ngModel required class="form-control" rows="5" placeholder="Message"></textarea>
+
+  <button type="submit" class="btn btn-primary">
+    Send Message
+  </button>
+
+</form>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div *ngIf="showSuccess" class="success">
+  Message sent successfully!
+</div>
+</section>

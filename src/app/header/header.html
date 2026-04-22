@@ -1,0 +1,55 @@
+<header id="header"
+        class="header dark-background d-flex flex-column"
+        [class.mobile-nav-active]="isSidebarOpen"><i class="header-toggle d-xl-none bi bi-list"
+   (click)="toggleSidebar()"></i>
+  <div class="profile-img">
+    <img src="assets/img/myImage.jpeg" class="img-fluid rounded-circle" alt="Profile Image"> 
+  </div>
+
+  <a href="#home" class="logo d-flex align-items-center justify-content-center">
+    <!-- <img src="assets/img/logo.png" alt=""> -->
+    <h1 class="sitename">Believe Chavingeni</h1>
+  </a>
+
+  <div class="social-links text-center">
+
+    <a href="https://wa.me/263777098241" target="_blank">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <a href="https://www.facebook.com/Believe%20Chavingeni" target="_blank">
+      <i class="bi bi-facebook"></i>
+    </a>
+
+    <a href="https://www.instagram.com/itssbeliebest/" target="_blank">
+      <i class="bi bi-instagram"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/believe-chavingeni-980b73329" target="_blank">
+      <i class="bi bi-linkedin"></i>
+    </a>
+
+  </div>
+
+  <nav id="navmenu" class="navmenu">
+    <ul>
+      <li><a href="#home" (click)="closeSidebar()">Home</a></li>
+
+<li><a href="#about" (click)="closeSidebar()">About</a></li>
+
+<li><a href="#skills" (click)="closeSidebar()">Skills</a></li>
+
+<li><a href="#portfolio" (click)="closeSidebar()">Portfolio</a></li>
+
+<li>
+  <a href="#contact" (click)="closeSidebar()">
+    <i class="bi bi-envelope navicon"></i> Contact
+  </a>
+</li>
+          </ul>
+  </nav>
+
+</header>
+<div class="mobile-overlay"
+     *ngIf="isSidebarOpen"
+     (click)="toggleSidebar()"></div>
