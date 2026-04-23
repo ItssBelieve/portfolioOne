@@ -1324,3 +1324,119 @@ section,
     max-width: 100% !important;
   }
 }
+/* ===============================
+   CONTACT SECTION UX IMPROVEMENTS
+================================ */
+
+.contact {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Section title readability */
+.contact .section-title h2 {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+.contact .section-title p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 15px;
+}
+
+/* Card container effect */
+.section-card {
+  background: var(--surface-color);
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Contact info styling */
+.contact .info p {
+  margin-bottom: 18px;
+  font-size: 15px;
+  color: var(--default-color);
+  word-break: break-word; /* FIX EMAIL OVERFLOW */
+}
+
+.contact .info a {
+  color: var(--accent-color);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* Form improvements */
+.contact form .form-control {
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  transition: 0.3s;
+}
+
+.contact form .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+/* Button upgrade */
+.contact button {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 12px;
+}
+
+/* Success message */
+.success {
+  color: #28a745;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+  .contact .section-title p {
+    font-size: 14px;
+  }
+
+  .section-card {
+    padding: 18px;
+  }
+
+  .contact .info p {
+    font-size: 14px;
+  }
+}
+/* ===============================
+   ABOUT SECTION EMAIL FIX
+================================ */
+
+.about .content ul li,
+.about .content p,
+.about a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.about .content a {
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Prevent flex overflow if email is inside flex row */
+.about .content li {
+  flex-wrap: wrap;
+}
+
+/* Mobile safety */
+@media (max-width: 768px) {
+  .about .content {
+    word-break: break-word;
+  }
+
+  .about .content a {
+    font-size: 14px;
+  }
+}
