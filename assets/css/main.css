@@ -1044,102 +1044,174 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-.contact .info-wrap {
-  background-color: var(--surface-color);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+.contact {
+  padding: 40px 0;
 }
 
-@media (max-width: 575px) {
-  .contact .info-wrap {
-    padding: 20px;
-  }
+.contact .section-card {
+  background: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact .info {
+  background: transparent;
 }
 
 .contact .info-item {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .contact .info-item i {
-  font-size: 20px;
+  font-size: 24px;
   color: var(--accent-color);
   background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 50%;
   transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
+  flex-shrink: 0;
 }
 
 .contact .info-item:hover i {
   background: var(--accent-color);
   color: var(--contrast-color);
+  transform: translateY(-5px);
 }
 
-.contact .php-email-form {
-  background-color: var(--surface-color);
-  height: 100%;
-  padding: 30px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+.contact .info-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--heading-color);
 }
 
-@media (max-width: 575px) {
-  .contact .php-email-form {
-    padding: 20px;
+.contact .info-item p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: var(--default-color);
+  line-height: 1.6;
+}
+
+.contact .info-item a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.contact .info-item a:hover {
+  text-decoration: underline;
+}
+
+/* Form Styling */
+.contact .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact .form-control {
+  padding: 12px 16px !important;
+  border: 2px solid #e9ecef !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  color: var(--default-color) !important;
+  background-color: #f8f9fa !important;
+  font-family: var(--default-font) !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+}
+
+.contact .form-control:focus {
+  border-color: var(--accent-color) !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(20, 157, 221, 0.1) !important;
+  outline: none !important;
+}
+
+.contact .form-control::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-weight: 500;
+}
+
+.contact textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Button Styling */
+.contact .btn-primary {
+  color: var(--contrast-color) !important;
+  background: var(--accent-color) !important;
+  border: 0 !important;
+  padding: 14px 40px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  box-shadow: 0 4px 15px rgba(20, 157, 221, 0.3) !important;
+  transition: all 0.4s ease !important;
+  margin-top: 10px;
+}
+
+.contact .btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 15%) !important;
+  box-shadow: 0 6px 20px rgba(20, 157, 221, 0.4) !important;
+  transform: translateY(-2px);
+}
+
+.contact .btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Success Message */
+.contact .success {
+  background-color: #d4edda;
+  border: 2px solid #28a745;
+  color: #155724;
+  padding: 16px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: var(--surface-color);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
+@media (max-width: 768px) {
+  .contact .section-card {
+    padding: 20px !important;
+  }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
+  .contact .form-control {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
+  .contact .btn-primary {
+    padding: 12px 30px !important;
+    font-size: 14px !important;
+  }
 
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  .contact .info-item {
+    margin-bottom: 25px;
+  }
 }
 
 /*--------------------------------------------------------------
