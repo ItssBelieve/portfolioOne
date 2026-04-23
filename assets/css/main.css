@@ -328,8 +328,7 @@ h6 {
 
 .navmenu .dropdown a,
 .navmenu .dropdown a:focus {
-  color: --nav-dropdown-color;
-}
+color: var(--nav-dropdown-color);}
 
 .navmenu .dropdown a:hover,
 .navmenu .dropdown .active,
@@ -1439,4 +1438,8 @@ section,
   .about .content a {
     font-size: 14px;
   }
+}
+.contact .info p:last-of-type {
+  color: var(--accent-color);
+  font-weight: 500;
 }
